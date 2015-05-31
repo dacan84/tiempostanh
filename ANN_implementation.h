@@ -8,8 +8,16 @@
 #ifndef SOLAR_ANN_IMPLEMENTATION_H_
 #define SOLAR_ANN_IMPLEMENTATION_H_
 
+/* Valores de entrada data class */
+typedef struct {
+    float	lux;
+    float	temp;
+    float 	vref;
+} TrainInputData;
+
 //void ANNCalculus (void);
-void Calculo_ANN (void);
+float Calculo_ANN_3Layer (TrainInputData dataN);
+float Calculo_ANN_2Layer (TrainInputData dataN);
 float VoltrageReference (float tensionReferenciaN);
 void GenerateInArraray (float l, float t);
 

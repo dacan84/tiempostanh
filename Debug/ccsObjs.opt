@@ -1,0 +1,1 @@
+"./ANN_implementation.obj" "./GPIO_init.obj" "./calculo_error.obj" "./main.obj" "../lnk_msp430fr5739.cmd" -l"libc.a" -l"libmath.a" 

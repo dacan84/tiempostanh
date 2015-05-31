@@ -11,10 +11,17 @@ int main(void) {
     P1OUT |=  BIT0;
     P1OUT |=  BIT1;
     while (1){
-    	GenerateInArraray(0.0452,0.3404);
+    	//GenerateInArraray(0.0452,0.3404);
+// TODO: Eliminar la declaración doble de vatiables.
 
     	P1OUT &= ~BIT1;
-    	Calculo_ANN();
+		#ifdef ANN2LAYER
+    		Calculo_ANN_2Layer();
+		#endif
+
+		#ifdef ANN3LAYER
+    		Calculo_ANN_3Layer();
+		#endif
     	P1OUT |=  BIT1;
 
     }
