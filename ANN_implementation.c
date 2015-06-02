@@ -225,6 +225,16 @@ static float CalTanh(float x) {
 	return resul;
 }
 
+TrainInputData NormalizedInput (TrainInputData input) {
+		TrainInputData inputsN;
+		inputsN.lux = (input.lux-LIGHT_LOWER_LIMIT)/(LIGHT_UPPER_LIMIT-LIGHT_LOWER_LIMIT);
+		inputsN.temp = (input.temp-TEMPERATURE_LOWER_LIMIT)/(TEMPERATURE_UPPER_LIMIT-TEMPERATURE_LOWER_LIMIT);
+		inputsN.vref = (input.vref-VMMP_REF_LOWER_LIMIT)/(VMMP_REF_UPPER_LIMIT-VMMP_REF_LOWER_LIMIT);
+
+		return inputsN;
+}
+
+
 static float VoltrageReferenceDenormalized(float VRefN) {
 	float Vref = 0;
 

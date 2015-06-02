@@ -9,15 +9,8 @@
 #define CALCULO_ERROR_H_
 
 #include <stdint.h>
-#include "ANN_implementation.h"
-
+#include "anndatatype.h"
 #define SIZE 256
-
-/* Errores data class */
-typedef struct {
-    float error_rel_avg;
-    float error_rel_max;
-} ErrorData;
 
 ErrorData calculo_errores (uint8_t number_samples, TrainInputData *in_data);
 
